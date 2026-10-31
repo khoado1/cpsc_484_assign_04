@@ -170,10 +170,13 @@ int AnimationTrack::moveKey(size_t index, float t, float eps) {
     //
     // As it stands this retimes in place and returns the index it was given.
     // Dragging works perfectly until a key crosses one of its neighbours.
+    
+    //suppress unused parameter warning
+    (void)eps;
+
     if (index >= keys.size()) return -1;
     if (t < 0.0f) t = 0.0f;
     keys[index].time = t;
-    (void)eps;
     return static_cast<int>(index);
 }
 
