@@ -1,0 +1,1162 @@
+mkdir -p obj
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/main.o main.cpp
+In file included from main.cpp:2:
+In file included from include/Application.h:5:
+In file included from include/Renderer.h:7:
+include/imgui/imgui.h:2984:43: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImDrawListSplitter' [-Wnontrivial-memcall]
+ 2984 |     inline ImDrawListSplitter()  { memset(this, 0, sizeof(*this)); }
+      |                                           ^
+include/imgui/imgui.h:2984:43: note: explicitly cast the pointer to silence this warning
+ 2984 |     inline ImDrawListSplitter()  { memset(this, 0, sizeof(*this)); }
+      |                                           ^
+      |                                           (void*)
+include/imgui/imgui.h:3055:60: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImDrawList' [-Wnontrivial-memcall]
+ 3055 |     ImDrawList(ImDrawListSharedData* shared_data) { memset(this, 0, sizeof(*this)); _Data = shared_data; }
+      |                                                            ^
+include/imgui/imgui.h:3055:60: note: explicitly cast the pointer to silence this warning
+ 3055 |     ImDrawList(ImDrawListSharedData* shared_data) { memset(this, 0, sizeof(*this)); _Data = shared_data; }
+      |                                                            ^
+      |                                                            (void*)
+In file included from main.cpp:2:
+In file included from include/Application.h:5:
+In file included from include/Renderer.h:25:
+include/SimpleSystem.h:34:10: warning: 'updateParticles' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+   34 |     void updateParticles();
+      |          ^
+include/ParticleSystem.h:24:18: note: overridden virtual function is here
+   24 |     virtual void updateParticles() {};
+      |                  ^
+In file included from main.cpp:2:
+In file included from include/Application.h:5:
+In file included from include/Renderer.h:26:
+In file included from include/SimplePendulum.h:4:
+include/PendulumSystem.h:30:10: warning: 'updateParticles' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+   30 |     void updateParticles();
+      |          ^
+include/ParticleSystem.h:24:18: note: overridden virtual function is here
+   24 |     virtual void updateParticles() {};
+      |                  ^
+4 warnings generated.
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/glad.o src/glad/glad.c
+clang++: warning: treating 'c' input as 'c++' when in C++ mode, this behavior is deprecated [-Wdeprecated]
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/imgui.o src/imgui/imgui.cpp
+In file included from src/imgui/imgui.cpp:1038:
+include/imgui/imgui.h:2984:43: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImDrawListSplitter' [-Wnontrivial-memcall]
+ 2984 |     inline ImDrawListSplitter()  { memset(this, 0, sizeof(*this)); }
+      |                                           ^
+include/imgui/imgui.h:2984:43: note: explicitly cast the pointer to silence this warning
+ 2984 |     inline ImDrawListSplitter()  { memset(this, 0, sizeof(*this)); }
+      |                                           ^
+      |                                           (void*)
+include/imgui/imgui.h:3055:60: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImDrawList' [-Wnontrivial-memcall]
+ 3055 |     ImDrawList(ImDrawListSharedData* shared_data) { memset(this, 0, sizeof(*this)); _Data = shared_data; }
+      |                                                            ^
+include/imgui/imgui.h:3055:60: note: explicitly cast the pointer to silence this warning
+ 3055 |     ImDrawList(ImDrawListSharedData* shared_data) { memset(this, 0, sizeof(*this)); _Data = shared_data; }
+      |                                                            ^
+      |                                                            (void*)
+In file included from src/imgui/imgui.cpp:1040:
+include/imgui/imgui_internal.h:790:54: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImDrawDataBuilder' [-Wnontrivial-memcall]
+  790 |     ImDrawDataBuilder()                     { memset(this, 0, sizeof(*this)); }
+      |                                                      ^
+include/imgui/imgui_internal.h:790:54: note: explicitly cast the pointer to silence this warning
+  790 |     ImDrawDataBuilder()                     { memset(this, 0, sizeof(*this)); }
+      |                                                      ^
+      |                                                      (void*)
+include/imgui/imgui_internal.h:1092:50: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImGuiInputTextDeactivatedState' [-Wnontrivial-memcall]
+ 1092 |     ImGuiInputTextDeactivatedState()    { memset(this, 0, sizeof(*this)); }
+      |                                                  ^
+include/imgui/imgui_internal.h:1092:50: note: explicitly cast the pointer to silence this warning
+ 1092 |     ImGuiInputTextDeactivatedState()    { memset(this, 0, sizeof(*this)); }
+      |                                                  ^
+      |                                                  (void*)
+include/imgui/imgui_internal.h:1521:46: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImGuiListClipperData' [-Wnontrivial-memcall]
+ 1521 |     ImGuiListClipperData()          { memset(this, 0, sizeof(*this)); }
+      |                                              ^
+include/imgui/imgui_internal.h:1521:46: note: explicitly cast the pointer to silence this warning
+ 1521 |     ImGuiListClipperData()          { memset(this, 0, sizeof(*this)); }
+      |                                              ^
+      |                                              (void*)
+include/imgui/imgui_internal.h:1705:34: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImGuiOldColumns' [-Wnontrivial-memcall]
+ 1705 |     ImGuiOldColumns()   { memset(this, 0, sizeof(*this)); }
+      |                                  ^
+include/imgui/imgui_internal.h:1705:34: note: explicitly cast the pointer to silence this warning
+ 1705 |     ImGuiOldColumns()   { memset(this, 0, sizeof(*this)); }
+      |                                  ^
+      |                                  (void*)
+include/imgui/imgui_internal.h:1967:38: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImGuiIDStackTool' [-Wnontrivial-memcall]
+ 1967 |     ImGuiIDStackTool()      { memset(this, 0, sizeof(*this)); CopyToClipboardLastTime = -FLT_MAX; }
+      |                                      ^
+include/imgui/imgui_internal.h:1967:38: note: explicitly cast the pointer to silence this warning
+ 1967 |     ImGuiIDStackTool()      { memset(this, 0, sizeof(*this)); CopyToClipboardLastTime = -FLT_MAX; }
+      |                                      ^
+      |                                      (void*)
+include/imgui/imgui_internal.h:3027:42: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImGuiTable' [-Wnontrivial-memcall]
+ 3027 |     ImGuiTable()                { memset(this, 0, sizeof(*this)); LastFrameActive = -1; }
+      |                                          ^
+include/imgui/imgui_internal.h:3027:42: note: explicitly cast the pointer to silence this warning
+ 3027 |     ImGuiTable()                { memset(this, 0, sizeof(*this)); LastFrameActive = -1; }
+      |                                          ^
+      |                                          (void*)
+include/imgui/imgui_internal.h:3055:42: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImGuiTableTempData' [-Wnontrivial-memcall]
+ 3055 |     ImGuiTableTempData()        { memset(this, 0, sizeof(*this)); LastTimeActive = -1.0f; }
+      |                                          ^
+include/imgui/imgui_internal.h:3055:42: note: explicitly cast the pointer to silence this warning
+ 3055 |     ImGuiTableTempData()        { memset(this, 0, sizeof(*this)); LastTimeActive = -1.0f; }
+      |                                          ^
+      |                                          (void*)
+src/imgui/imgui.cpp:1360:12: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImGuiIO' [-Wnontrivial-memcall]
+ 1360 |     memset(this, 0, sizeof(*this));
+      |            ^
+src/imgui/imgui.cpp:1360:12: note: explicitly cast the pointer to silence this warning
+ 1360 |     memset(this, 0, sizeof(*this));
+      |            ^
+      |            (void*)
+src/imgui/imgui.cpp:2955:12: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImGuiListClipper' [-Wnontrivial-memcall]
+ 2955 |     memset(this, 0, sizeof(*this));
+      |            ^
+src/imgui/imgui.cpp:2955:12: note: explicitly cast the pointer to silence this warning
+ 2955 |     memset(this, 0, sizeof(*this));
+      |            ^
+      |            (void*)
+src/imgui/imgui.cpp:3973:12: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImGuiWindow' [-Wnontrivial-memcall]
+ 3973 |     memset(this, 0, sizeof(*this));
+      |            ^
+src/imgui/imgui.cpp:3973:12: note: explicitly cast the pointer to silence this warning
+ 3973 |     memset(this, 0, sizeof(*this));
+      |            ^
+      |            (void*)
+In file included from src/imgui/imgui.cpp:1038:
+include/imgui/imgui.h:2104:189: warning: first argument in call to 'memcpy' is a pointer to non-trivially copyable type 'ImGuiListClipperData' [-Wnontrivial-memcall]
+ 2104 |     inline void         resize(int new_size, const T& v)    { if (new_size > Capacity) reserve(_grow_capacity(new_size)); if (new_size > Size) for (int n = Size; n < new_size; n++) memcpy(&Data[n], &v, sizeof(v)); Size = new_size; }
+      |                                                                                                                                                                                             ^
+src/imgui/imgui.cpp:2984:27: note: in instantiation of member function 'ImVector<ImGuiListClipperData>::resize' requested here
+ 2984 |         g.ClipperTempData.resize(g.ClipperTempDataStacked, ImGuiListClipperData());
+      |                           ^
+include/imgui/imgui.h:2104:189: note: explicitly cast the pointer to silence this warning
+ 2104 |     inline void         resize(int new_size, const T& v)    { if (new_size > Capacity) reserve(_grow_capacity(new_size)); if (new_size > Size) for (int n = Size; n < new_size; n++) memcpy(&Data[n], &v, sizeof(v)); Size = new_size; }
+      |                                                                                                                                                                                             ^
+      |                                                                                                                                                                                             (void*)
+include/imgui/imgui.h:2106:182: warning: first argument in call to 'memcpy' is a pointer to non-trivially copyable type 'ImGuiListClipperData' [-Wnontrivial-memcall]
+ 2106 |     inline void         reserve(int new_capacity)           { if (new_capacity <= Capacity) return; T* new_data = (T*)IM_ALLOC((size_t)new_capacity * sizeof(T)); if (Data) { memcpy(new_data, Data, (size_t)Size * sizeof(T)); IM_FREE(Data); } Data = new_data; Capacity = new_capacity; }
+      |                                                                                                                                                                                      ^
+include/imgui/imgui.h:2104:88: note: in instantiation of member function 'ImVector<ImGuiListClipperData>::reserve' requested here
+ 2104 |     inline void         resize(int new_size, const T& v)    { if (new_size > Capacity) reserve(_grow_capacity(new_size)); if (new_size > Size) for (int n = Size; n < new_size; n++) memcpy(&Data[n], &v, sizeof(v)); Size = new_size; }
+      |                                                                                        ^
+src/imgui/imgui.cpp:2984:27: note: in instantiation of member function 'ImVector<ImGuiListClipperData>::resize' requested here
+ 2984 |         g.ClipperTempData.resize(g.ClipperTempDataStacked, ImGuiListClipperData());
+      |                           ^
+include/imgui/imgui.h:2106:182: note: explicitly cast the pointer to silence this warning
+ 2106 |     inline void         reserve(int new_capacity)           { if (new_capacity <= Capacity) return; T* new_data = (T*)IM_ALLOC((size_t)new_capacity * sizeof(T)); if (Data) { memcpy(new_data, Data, (size_t)Size * sizeof(T)); IM_FREE(Data); } Data = new_data; Capacity = new_capacity; }
+      |                                                                                                                                                                                      ^
+      |                                                                                                                                                                                      (void*)
+14 warnings generated.
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/imgui_demo.o src/imgui/imgui_demo.cpp
+In file included from src/imgui/imgui_demo.cpp:106:
+include/imgui/imgui.h:2984:43: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImDrawListSplitter' [-Wnontrivial-memcall]
+ 2984 |     inline ImDrawListSplitter()  { memset(this, 0, sizeof(*this)); }
+      |                                           ^
+include/imgui/imgui.h:2984:43: note: explicitly cast the pointer to silence this warning
+ 2984 |     inline ImDrawListSplitter()  { memset(this, 0, sizeof(*this)); }
+      |                                           ^
+      |                                           (void*)
+include/imgui/imgui.h:3055:60: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImDrawList' [-Wnontrivial-memcall]
+ 3055 |     ImDrawList(ImDrawListSharedData* shared_data) { memset(this, 0, sizeof(*this)); _Data = shared_data; }
+      |                                                            ^
+include/imgui/imgui.h:3055:60: note: explicitly cast the pointer to silence this warning
+ 3055 |     ImDrawList(ImDrawListSharedData* shared_data) { memset(this, 0, sizeof(*this)); _Data = shared_data; }
+      |                                                            ^
+      |                                                            (void*)
+2 warnings generated.
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/imgui_draw.o src/imgui/imgui_draw.cpp
+In file included from src/imgui/imgui_draw.cpp:34:
+include/imgui/imgui.h:2984:43: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImDrawListSplitter' [-Wnontrivial-memcall]
+ 2984 |     inline ImDrawListSplitter()  { memset(this, 0, sizeof(*this)); }
+      |                                           ^
+include/imgui/imgui.h:2984:43: note: explicitly cast the pointer to silence this warning
+ 2984 |     inline ImDrawListSplitter()  { memset(this, 0, sizeof(*this)); }
+      |                                           ^
+      |                                           (void*)
+include/imgui/imgui.h:3055:60: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImDrawList' [-Wnontrivial-memcall]
+ 3055 |     ImDrawList(ImDrawListSharedData* shared_data) { memset(this, 0, sizeof(*this)); _Data = shared_data; }
+      |                                                            ^
+include/imgui/imgui.h:3055:60: note: explicitly cast the pointer to silence this warning
+ 3055 |     ImDrawList(ImDrawListSharedData* shared_data) { memset(this, 0, sizeof(*this)); _Data = shared_data; }
+      |                                                            ^
+      |                                                            (void*)
+In file included from src/imgui/imgui_draw.cpp:36:
+include/imgui/imgui_internal.h:790:54: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImDrawDataBuilder' [-Wnontrivial-memcall]
+  790 |     ImDrawDataBuilder()                     { memset(this, 0, sizeof(*this)); }
+      |                                                      ^
+include/imgui/imgui_internal.h:790:54: note: explicitly cast the pointer to silence this warning
+  790 |     ImDrawDataBuilder()                     { memset(this, 0, sizeof(*this)); }
+      |                                                      ^
+      |                                                      (void*)
+include/imgui/imgui_internal.h:1092:50: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImGuiInputTextDeactivatedState' [-Wnontrivial-memcall]
+ 1092 |     ImGuiInputTextDeactivatedState()    { memset(this, 0, sizeof(*this)); }
+      |                                                  ^
+include/imgui/imgui_internal.h:1092:50: note: explicitly cast the pointer to silence this warning
+ 1092 |     ImGuiInputTextDeactivatedState()    { memset(this, 0, sizeof(*this)); }
+      |                                                  ^
+      |                                                  (void*)
+include/imgui/imgui_internal.h:1521:46: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImGuiListClipperData' [-Wnontrivial-memcall]
+ 1521 |     ImGuiListClipperData()          { memset(this, 0, sizeof(*this)); }
+      |                                              ^
+include/imgui/imgui_internal.h:1521:46: note: explicitly cast the pointer to silence this warning
+ 1521 |     ImGuiListClipperData()          { memset(this, 0, sizeof(*this)); }
+      |                                              ^
+      |                                              (void*)
+include/imgui/imgui_internal.h:1705:34: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImGuiOldColumns' [-Wnontrivial-memcall]
+ 1705 |     ImGuiOldColumns()   { memset(this, 0, sizeof(*this)); }
+      |                                  ^
+include/imgui/imgui_internal.h:1705:34: note: explicitly cast the pointer to silence this warning
+ 1705 |     ImGuiOldColumns()   { memset(this, 0, sizeof(*this)); }
+      |                                  ^
+      |                                  (void*)
+include/imgui/imgui_internal.h:1967:38: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImGuiIDStackTool' [-Wnontrivial-memcall]
+ 1967 |     ImGuiIDStackTool()      { memset(this, 0, sizeof(*this)); CopyToClipboardLastTime = -FLT_MAX; }
+      |                                      ^
+include/imgui/imgui_internal.h:1967:38: note: explicitly cast the pointer to silence this warning
+ 1967 |     ImGuiIDStackTool()      { memset(this, 0, sizeof(*this)); CopyToClipboardLastTime = -FLT_MAX; }
+      |                                      ^
+      |                                      (void*)
+include/imgui/imgui_internal.h:3027:42: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImGuiTable' [-Wnontrivial-memcall]
+ 3027 |     ImGuiTable()                { memset(this, 0, sizeof(*this)); LastFrameActive = -1; }
+      |                                          ^
+include/imgui/imgui_internal.h:3027:42: note: explicitly cast the pointer to silence this warning
+ 3027 |     ImGuiTable()                { memset(this, 0, sizeof(*this)); LastFrameActive = -1; }
+      |                                          ^
+      |                                          (void*)
+include/imgui/imgui_internal.h:3055:42: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImGuiTableTempData' [-Wnontrivial-memcall]
+ 3055 |     ImGuiTableTempData()        { memset(this, 0, sizeof(*this)); LastTimeActive = -1.0f; }
+      |                                          ^
+include/imgui/imgui_internal.h:3055:42: note: explicitly cast the pointer to silence this warning
+ 3055 |     ImGuiTableTempData()        { memset(this, 0, sizeof(*this)); LastTimeActive = -1.0f; }
+      |                                          ^
+      |                                          (void*)
+src/imgui/imgui_draw.cpp:372:12: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImDrawListSharedData' [-Wnontrivial-memcall]
+  372 |     memset(this, 0, sizeof(*this));
+      |            ^
+src/imgui/imgui_draw.cpp:372:12: note: explicitly cast the pointer to silence this warning
+  372 |     memset(this, 0, sizeof(*this));
+      |            ^
+      |            (void*)
+src/imgui/imgui_draw.cpp:2044:20: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImDrawChannel' [-Wnontrivial-memcall]
+ 2044 |             memset(&_Channels[i], 0, sizeof(_Channels[i]));  // Current channel is a copy of CmdBuffer/IdxBuffer, don't destruct again
+      |                    ^
+src/imgui/imgui_draw.cpp:2044:20: note: explicitly cast the pointer to silence this warning
+ 2044 |             memset(&_Channels[i], 0, sizeof(_Channels[i]));  // Current channel is a copy of CmdBuffer/IdxBuffer, don't destruct again
+      |                    ^
+      |                    (void*)
+src/imgui/imgui_draw.cpp:2068:12: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImDrawChannel' [-Wnontrivial-memcall]
+ 2068 |     memset(&_Channels[0], 0, sizeof(ImDrawChannel));
+      |            ^
+src/imgui/imgui_draw.cpp:2068:12: note: explicitly cast the pointer to silence this warning
+ 2068 |     memset(&_Channels[0], 0, sizeof(ImDrawChannel));
+      |            ^
+      |            (void*)
+src/imgui/imgui_draw.cpp:2161:12: warning: first argument in call to 'memcpy' is a pointer to non-trivially copyable type 'ImVector<ImDrawCmd>' [-Wnontrivial-memcall]
+ 2161 |     memcpy(&_Channels.Data[_Current]._CmdBuffer, &draw_list->CmdBuffer, sizeof(draw_list->CmdBuffer));
+      |            ^
+src/imgui/imgui_draw.cpp:2161:12: note: explicitly cast the pointer to silence this warning
+ 2161 |     memcpy(&_Channels.Data[_Current]._CmdBuffer, &draw_list->CmdBuffer, sizeof(draw_list->CmdBuffer));
+      |            ^
+      |            (void*)
+src/imgui/imgui_draw.cpp:2162:12: warning: first argument in call to 'memcpy' is a pointer to non-trivially copyable type 'ImVector<ImDrawIdx>' (aka 'ImVector<unsigned short>') [-Wnontrivial-memcall]
+ 2162 |     memcpy(&_Channels.Data[_Current]._IdxBuffer, &draw_list->IdxBuffer, sizeof(draw_list->IdxBuffer));
+      |            ^
+src/imgui/imgui_draw.cpp:2162:12: note: explicitly cast the pointer to silence this warning
+ 2162 |     memcpy(&_Channels.Data[_Current]._IdxBuffer, &draw_list->IdxBuffer, sizeof(draw_list->IdxBuffer));
+      |            ^
+      |            (void*)
+src/imgui/imgui_draw.cpp:2164:12: warning: first argument in call to 'memcpy' is a pointer to non-trivially copyable type 'ImVector<ImDrawCmd>' [-Wnontrivial-memcall]
+ 2164 |     memcpy(&draw_list->CmdBuffer, &_Channels.Data[idx]._CmdBuffer, sizeof(draw_list->CmdBuffer));
+      |            ^
+src/imgui/imgui_draw.cpp:2164:12: note: explicitly cast the pointer to silence this warning
+ 2164 |     memcpy(&draw_list->CmdBuffer, &_Channels.Data[idx]._CmdBuffer, sizeof(draw_list->CmdBuffer));
+      |            ^
+      |            (void*)
+src/imgui/imgui_draw.cpp:2165:12: warning: first argument in call to 'memcpy' is a pointer to non-trivially copyable type 'ImVector<ImDrawIdx>' (aka 'ImVector<unsigned short>') [-Wnontrivial-memcall]
+ 2165 |     memcpy(&draw_list->IdxBuffer, &_Channels.Data[idx]._IdxBuffer, sizeof(draw_list->IdxBuffer));
+      |            ^
+src/imgui/imgui_draw.cpp:2165:12: note: explicitly cast the pointer to silence this warning
+ 2165 |     memcpy(&draw_list->IdxBuffer, &_Channels.Data[idx]._IdxBuffer, sizeof(draw_list->IdxBuffer));
+      |            ^
+      |            (void*)
+src/imgui/imgui_draw.cpp:2401:12: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImFontAtlas' [-Wnontrivial-memcall]
+ 2401 |     memset(this, 0, sizeof(*this));
+      |            ^
+src/imgui/imgui_draw.cpp:2401:12: note: explicitly cast the pointer to silence this warning
+ 2401 |     memset(this, 0, sizeof(*this));
+      |            ^
+      |            (void*)
+src/imgui/imgui_draw.cpp:2791:26: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImFontBuildSrcData' [-Wnontrivial-memcall]
+ 2791 |     memset(src_tmp_array.Data, 0, (size_t)src_tmp_array.size_in_bytes());
+      |                          ^
+src/imgui/imgui_draw.cpp:2791:26: note: explicitly cast the pointer to silence this warning
+ 2791 |     memset(src_tmp_array.Data, 0, (size_t)src_tmp_array.size_in_bytes());
+      |                          ^
+      |            (void*)
+src/imgui/imgui_draw.cpp:2792:26: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImFontBuildDstData' [-Wnontrivial-memcall]
+ 2792 |     memset(dst_tmp_array.Data, 0, (size_t)dst_tmp_array.size_in_bytes());
+      |                          ^
+src/imgui/imgui_draw.cpp:2792:26: note: explicitly cast the pointer to silence this warning
+ 2792 |     memset(dst_tmp_array.Data, 0, (size_t)dst_tmp_array.size_in_bytes());
+      |                          ^
+      |            (void*)
+In file included from src/imgui/imgui_draw.cpp:34:
+include/imgui/imgui.h:2106:182: warning: first argument in call to 'memcpy' is a pointer to non-trivially copyable type 'ImDrawChannel' [-Wnontrivial-memcall]
+ 2106 |     inline void         reserve(int new_capacity)           { if (new_capacity <= Capacity) return; T* new_data = (T*)IM_ALLOC((size_t)new_capacity * sizeof(T)); if (Data) { memcpy(new_data, Data, (size_t)Size * sizeof(T)); IM_FREE(Data); } Data = new_data; Capacity = new_capacity; }
+      |                                                                                                                                                                                      ^
+src/imgui/imgui_draw.cpp:2060:19: note: in instantiation of member function 'ImVector<ImDrawChannel>::reserve' requested here
+ 2060 |         _Channels.reserve(channels_count); // Avoid over reserving since this is likely to stay stable
+      |                   ^
+include/imgui/imgui.h:2106:182: note: explicitly cast the pointer to silence this warning
+ 2106 |     inline void         reserve(int new_capacity)           { if (new_capacity <= Capacity) return; T* new_data = (T*)IM_ALLOC((size_t)new_capacity * sizeof(T)); if (Data) { memcpy(new_data, Data, (size_t)Size * sizeof(T)); IM_FREE(Data); } Data = new_data; Capacity = new_capacity; }
+      |                                                                                                                                                                                      ^
+      |                                                                                                                                                                                      (void*)
+include/imgui/imgui.h:2106:182: warning: first argument in call to 'memcpy' is a pointer to non-trivially copyable type 'ImFontBuildSrcData' [-Wnontrivial-memcall]
+ 2106 |     inline void         reserve(int new_capacity)           { if (new_capacity <= Capacity) return; T* new_data = (T*)IM_ALLOC((size_t)new_capacity * sizeof(T)); if (Data) { memcpy(new_data, Data, (size_t)Size * sizeof(T)); IM_FREE(Data); } Data = new_data; Capacity = new_capacity; }
+      |                                                                                                                                                                                      ^
+include/imgui/imgui.h:2103:88: note: in instantiation of member function 'ImVector<ImFontBuildSrcData>::reserve' requested here
+ 2103 |     inline void         resize(int new_size)                { if (new_size > Capacity) reserve(_grow_capacity(new_size)); Size = new_size; }
+      |                                                                                        ^
+src/imgui/imgui_draw.cpp:2789:19: note: in instantiation of member function 'ImVector<ImFontBuildSrcData>::resize' requested here
+ 2789 |     src_tmp_array.resize(atlas->ConfigData.Size);
+      |                   ^
+include/imgui/imgui.h:2106:182: note: explicitly cast the pointer to silence this warning
+ 2106 |     inline void         reserve(int new_capacity)           { if (new_capacity <= Capacity) return; T* new_data = (T*)IM_ALLOC((size_t)new_capacity * sizeof(T)); if (Data) { memcpy(new_data, Data, (size_t)Size * sizeof(T)); IM_FREE(Data); } Data = new_data; Capacity = new_capacity; }
+      |                                                                                                                                                                                      ^
+      |                                                                                                                                                                                      (void*)
+include/imgui/imgui.h:2106:182: warning: first argument in call to 'memcpy' is a pointer to non-trivially copyable type 'ImFontBuildDstData' [-Wnontrivial-memcall]
+ 2106 |     inline void         reserve(int new_capacity)           { if (new_capacity <= Capacity) return; T* new_data = (T*)IM_ALLOC((size_t)new_capacity * sizeof(T)); if (Data) { memcpy(new_data, Data, (size_t)Size * sizeof(T)); IM_FREE(Data); } Data = new_data; Capacity = new_capacity; }
+      |                                                                                                                                                                                      ^
+include/imgui/imgui.h:2103:88: note: in instantiation of member function 'ImVector<ImFontBuildDstData>::reserve' requested here
+ 2103 |     inline void         resize(int new_size)                { if (new_size > Capacity) reserve(_grow_capacity(new_size)); Size = new_size; }
+      |                                                                                        ^
+src/imgui/imgui_draw.cpp:2790:19: note: in instantiation of member function 'ImVector<ImFontBuildDstData>::resize' requested here
+ 2790 |     dst_tmp_array.resize(atlas->Fonts.Size);
+      |                   ^
+include/imgui/imgui.h:2106:182: note: explicitly cast the pointer to silence this warning
+ 2106 |     inline void         reserve(int new_capacity)           { if (new_capacity <= Capacity) return; T* new_data = (T*)IM_ALLOC((size_t)new_capacity * sizeof(T)); if (Data) { memcpy(new_data, Data, (size_t)Size * sizeof(T)); IM_FREE(Data); } Data = new_data; Capacity = new_capacity; }
+      |                                                                                                                                                                                      ^
+      |                                                                                                                                                                                      (void*)
+22 warnings generated.
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/imgui_tables.o src/imgui/imgui_tables.cpp
+In file included from src/imgui/imgui_tables.cpp:198:
+include/imgui/imgui.h:2984:43: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImDrawListSplitter' [-Wnontrivial-memcall]
+ 2984 |     inline ImDrawListSplitter()  { memset(this, 0, sizeof(*this)); }
+      |                                           ^
+include/imgui/imgui.h:2984:43: note: explicitly cast the pointer to silence this warning
+ 2984 |     inline ImDrawListSplitter()  { memset(this, 0, sizeof(*this)); }
+      |                                           ^
+      |                                           (void*)
+include/imgui/imgui.h:3055:60: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImDrawList' [-Wnontrivial-memcall]
+ 3055 |     ImDrawList(ImDrawListSharedData* shared_data) { memset(this, 0, sizeof(*this)); _Data = shared_data; }
+      |                                                            ^
+include/imgui/imgui.h:3055:60: note: explicitly cast the pointer to silence this warning
+ 3055 |     ImDrawList(ImDrawListSharedData* shared_data) { memset(this, 0, sizeof(*this)); _Data = shared_data; }
+      |                                                            ^
+      |                                                            (void*)
+In file included from src/imgui/imgui_tables.cpp:200:
+include/imgui/imgui_internal.h:790:54: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImDrawDataBuilder' [-Wnontrivial-memcall]
+  790 |     ImDrawDataBuilder()                     { memset(this, 0, sizeof(*this)); }
+      |                                                      ^
+include/imgui/imgui_internal.h:790:54: note: explicitly cast the pointer to silence this warning
+  790 |     ImDrawDataBuilder()                     { memset(this, 0, sizeof(*this)); }
+      |                                                      ^
+      |                                                      (void*)
+include/imgui/imgui_internal.h:1092:50: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImGuiInputTextDeactivatedState' [-Wnontrivial-memcall]
+ 1092 |     ImGuiInputTextDeactivatedState()    { memset(this, 0, sizeof(*this)); }
+      |                                                  ^
+include/imgui/imgui_internal.h:1092:50: note: explicitly cast the pointer to silence this warning
+ 1092 |     ImGuiInputTextDeactivatedState()    { memset(this, 0, sizeof(*this)); }
+      |                                                  ^
+      |                                                  (void*)
+include/imgui/imgui_internal.h:1521:46: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImGuiListClipperData' [-Wnontrivial-memcall]
+ 1521 |     ImGuiListClipperData()          { memset(this, 0, sizeof(*this)); }
+      |                                              ^
+include/imgui/imgui_internal.h:1521:46: note: explicitly cast the pointer to silence this warning
+ 1521 |     ImGuiListClipperData()          { memset(this, 0, sizeof(*this)); }
+      |                                              ^
+      |                                              (void*)
+include/imgui/imgui_internal.h:1705:34: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImGuiOldColumns' [-Wnontrivial-memcall]
+ 1705 |     ImGuiOldColumns()   { memset(this, 0, sizeof(*this)); }
+      |                                  ^
+include/imgui/imgui_internal.h:1705:34: note: explicitly cast the pointer to silence this warning
+ 1705 |     ImGuiOldColumns()   { memset(this, 0, sizeof(*this)); }
+      |                                  ^
+      |                                  (void*)
+include/imgui/imgui_internal.h:1967:38: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImGuiIDStackTool' [-Wnontrivial-memcall]
+ 1967 |     ImGuiIDStackTool()      { memset(this, 0, sizeof(*this)); CopyToClipboardLastTime = -FLT_MAX; }
+      |                                      ^
+include/imgui/imgui_internal.h:1967:38: note: explicitly cast the pointer to silence this warning
+ 1967 |     ImGuiIDStackTool()      { memset(this, 0, sizeof(*this)); CopyToClipboardLastTime = -FLT_MAX; }
+      |                                      ^
+      |                                      (void*)
+include/imgui/imgui_internal.h:3027:42: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImGuiTable' [-Wnontrivial-memcall]
+ 3027 |     ImGuiTable()                { memset(this, 0, sizeof(*this)); LastFrameActive = -1; }
+      |                                          ^
+include/imgui/imgui_internal.h:3027:42: note: explicitly cast the pointer to silence this warning
+ 3027 |     ImGuiTable()                { memset(this, 0, sizeof(*this)); LastFrameActive = -1; }
+      |                                          ^
+      |                                          (void*)
+include/imgui/imgui_internal.h:3055:42: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImGuiTableTempData' [-Wnontrivial-memcall]
+ 3055 |     ImGuiTableTempData()        { memset(this, 0, sizeof(*this)); LastTimeActive = -1.0f; }
+      |                                          ^
+include/imgui/imgui_internal.h:3055:42: note: explicitly cast the pointer to silence this warning
+ 3055 |     ImGuiTableTempData()        { memset(this, 0, sizeof(*this)); LastTimeActive = -1.0f; }
+      |                                          ^
+      |                                          (void*)
+src/imgui/imgui_tables.cpp:2662:35: warning: first argument in call to 'memcpy' is a pointer to non-trivially copyable type 'ImDrawChannel' [-Wnontrivial-memcall]
+ 2662 |                     memcpy(dst_tmp++, channel, sizeof(ImDrawChannel));
+      |                                   ^
+src/imgui/imgui_tables.cpp:2662:35: note: explicitly cast the pointer to silence this warning
+ 2662 |                     memcpy(dst_tmp++, channel, sizeof(ImDrawChannel));
+      |                                   ^
+      |                            (void*)
+src/imgui/imgui_tables.cpp:2668:31: warning: first argument in call to 'memcpy' is a pointer to non-trivially copyable type 'ImDrawChannel' [-Wnontrivial-memcall]
+ 2668 |                 memcpy(dst_tmp++, &splitter->_Channels[table->Bg2DrawChannelUnfrozen], sizeof(ImDrawChannel));
+      |                               ^
+src/imgui/imgui_tables.cpp:2668:31: note: explicitly cast the pointer to silence this warning
+ 2668 |                 memcpy(dst_tmp++, &splitter->_Channels[table->Bg2DrawChannelUnfrozen], sizeof(ImDrawChannel));
+      |                               ^
+      |                        (void*)
+src/imgui/imgui_tables.cpp:2677:27: warning: first argument in call to 'memcpy' is a pointer to non-trivially copyable type 'ImDrawChannel' [-Wnontrivial-memcall]
+ 2677 |             memcpy(dst_tmp++, channel, sizeof(ImDrawChannel));
+      |                           ^
+src/imgui/imgui_tables.cpp:2677:27: note: explicitly cast the pointer to silence this warning
+ 2677 |             memcpy(dst_tmp++, channel, sizeof(ImDrawChannel));
+      |                           ^
+      |                    (void*)
+src/imgui/imgui_tables.cpp:2681:41: warning: first argument in call to 'memcpy' is a pointer to non-trivially copyable type 'ImDrawChannel' [-Wnontrivial-memcall]
+ 2681 |         memcpy(splitter->_Channels.Data + LEADING_DRAW_CHANNELS, g.DrawChannelsTempMergeBuffer.Data, (splitter->_Count - LEADING_DRAW_CHANNELS) * sizeof(ImDrawChannel));
+      |                                         ^
+src/imgui/imgui_tables.cpp:2681:41: note: explicitly cast the pointer to silence this warning
+ 2681 |         memcpy(splitter->_Channels.Data + LEADING_DRAW_CHANNELS, g.DrawChannelsTempMergeBuffer.Data, (splitter->_Count - LEADING_DRAW_CHANNELS) * sizeof(ImDrawChannel));
+      |                                         ^
+      |                (void*)
+In file included from src/imgui/imgui_tables.cpp:198:
+include/imgui/imgui.h:2106:182: warning: first argument in call to 'memcpy' is a pointer to non-trivially copyable type 'ImGuiTable' [-Wnontrivial-memcall]
+ 2106 |     inline void         reserve(int new_capacity)           { if (new_capacity <= Capacity) return; T* new_data = (T*)IM_ALLOC((size_t)new_capacity * sizeof(T)); if (Data) { memcpy(new_data, Data, (size_t)Size * sizeof(T)); IM_FREE(Data); } Data = new_data; Capacity = new_capacity; }
+      |                                                                                                                                                                                      ^
+include/imgui/imgui.h:2103:88: note: in instantiation of member function 'ImVector<ImGuiTable>::reserve' requested here
+ 2103 |     inline void         resize(int new_size)                { if (new_size > Capacity) reserve(_grow_capacity(new_size)); Size = new_size; }
+      |                                                                                        ^
+include/imgui/imgui_internal.h:678:101: note: in instantiation of member function 'ImVector<ImGuiTable>::resize' requested here
+  678 |     T*          Add()                               { int idx = FreeIdx; if (idx == Buf.Size) { Buf.resize(Buf.Size + 1); FreeIdx++; } else { FreeIdx = *(int*)&Buf[idx]; } IM_PLACEMENT_NEW(&Buf[idx]) T(); AliveCount++; return &Buf[idx]; }
+      |                                                                                                     ^
+include/imgui/imgui_internal.h:675:156: note: in instantiation of member function 'ImPool<ImGuiTable>::Add' requested here
+  675 |     T*          GetOrAddByKey(ImGuiID key)          { int* p_idx = Map.GetIntRef(key, -1); if (*p_idx != -1) return &Buf[*p_idx]; *p_idx = FreeIdx; return Add(); }
+      |                                                                                                                                                            ^
+src/imgui/imgui_tables.cpp:346:34: note: in instantiation of member function 'ImPool<ImGuiTable>::GetOrAddByKey' requested here
+  346 |     ImGuiTable* table = g.Tables.GetOrAddByKey(id);
+      |                                  ^
+include/imgui/imgui.h:2106:182: note: explicitly cast the pointer to silence this warning
+ 2106 |     inline void         reserve(int new_capacity)           { if (new_capacity <= Capacity) return; T* new_data = (T*)IM_ALLOC((size_t)new_capacity * sizeof(T)); if (Data) { memcpy(new_data, Data, (size_t)Size * sizeof(T)); IM_FREE(Data); } Data = new_data; Capacity = new_capacity; }
+      |                                                                                                                                                                                      ^
+      |                                                                                                                                                                                      (void*)
+include/imgui/imgui.h:2104:189: warning: first argument in call to 'memcpy' is a pointer to non-trivially copyable type 'ImGuiTableTempData' [-Wnontrivial-memcall]
+ 2104 |     inline void         resize(int new_size, const T& v)    { if (new_size > Capacity) reserve(_grow_capacity(new_size)); if (new_size > Size) for (int n = Size; n < new_size; n++) memcpy(&Data[n], &v, sizeof(v)); Size = new_size; }
+      |                                                                                                                                                                                             ^
+src/imgui/imgui_tables.cpp:351:26: note: in instantiation of member function 'ImVector<ImGuiTableTempData>::resize' requested here
+  351 |         g.TablesTempData.resize(g.TablesTempDataStacked, ImGuiTableTempData());
+      |                          ^
+include/imgui/imgui.h:2104:189: note: explicitly cast the pointer to silence this warning
+ 2104 |     inline void         resize(int new_size, const T& v)    { if (new_size > Capacity) reserve(_grow_capacity(new_size)); if (new_size > Size) for (int n = Size; n < new_size; n++) memcpy(&Data[n], &v, sizeof(v)); Size = new_size; }
+      |                                                                                                                                                                                             ^
+      |                                                                                                                                                                                             (void*)
+include/imgui/imgui.h:2106:182: warning: first argument in call to 'memcpy' is a pointer to non-trivially copyable type 'ImGuiTableTempData' [-Wnontrivial-memcall]
+ 2106 |     inline void         reserve(int new_capacity)           { if (new_capacity <= Capacity) return; T* new_data = (T*)IM_ALLOC((size_t)new_capacity * sizeof(T)); if (Data) { memcpy(new_data, Data, (size_t)Size * sizeof(T)); IM_FREE(Data); } Data = new_data; Capacity = new_capacity; }
+      |                                                                                                                                                                                      ^
+include/imgui/imgui.h:2104:88: note: in instantiation of member function 'ImVector<ImGuiTableTempData>::reserve' requested here
+ 2104 |     inline void         resize(int new_size, const T& v)    { if (new_size > Capacity) reserve(_grow_capacity(new_size)); if (new_size > Size) for (int n = Size; n < new_size; n++) memcpy(&Data[n], &v, sizeof(v)); Size = new_size; }
+      |                                                                                        ^
+src/imgui/imgui_tables.cpp:351:26: note: in instantiation of member function 'ImVector<ImGuiTableTempData>::resize' requested here
+  351 |         g.TablesTempData.resize(g.TablesTempDataStacked, ImGuiTableTempData());
+      |                          ^
+include/imgui/imgui.h:2106:182: note: explicitly cast the pointer to silence this warning
+ 2106 |     inline void         reserve(int new_capacity)           { if (new_capacity <= Capacity) return; T* new_data = (T*)IM_ALLOC((size_t)new_capacity * sizeof(T)); if (Data) { memcpy(new_data, Data, (size_t)Size * sizeof(T)); IM_FREE(Data); } Data = new_data; Capacity = new_capacity; }
+      |                                                                                                                                                                                      ^
+      |                                                                                                                                                                                      (void*)
+include/imgui/imgui.h:2106:182: warning: first argument in call to 'memcpy' is a pointer to non-trivially copyable type 'ImDrawChannel' [-Wnontrivial-memcall]
+ 2106 |     inline void         reserve(int new_capacity)           { if (new_capacity <= Capacity) return; T* new_data = (T*)IM_ALLOC((size_t)new_capacity * sizeof(T)); if (Data) { memcpy(new_data, Data, (size_t)Size * sizeof(T)); IM_FREE(Data); } Data = new_data; Capacity = new_capacity; }
+      |                                                                                                                                                                                      ^
+include/imgui/imgui.h:2103:88: note: in instantiation of member function 'ImVector<ImDrawChannel>::reserve' requested here
+ 2103 |     inline void         resize(int new_size)                { if (new_size > Capacity) reserve(_grow_capacity(new_size)); Size = new_size; }
+      |                                                                                        ^
+src/imgui/imgui_tables.cpp:2615:39: note: in instantiation of member function 'ImVector<ImDrawChannel>::resize' requested here
+ 2615 |         g.DrawChannelsTempMergeBuffer.resize(splitter->_Count - LEADING_DRAW_CHANNELS); // Use shared temporary storage so the allocation gets amortized
+      |                                       ^
+include/imgui/imgui.h:2106:182: note: explicitly cast the pointer to silence this warning
+ 2106 |     inline void         reserve(int new_capacity)           { if (new_capacity <= Capacity) return; T* new_data = (T*)IM_ALLOC((size_t)new_capacity * sizeof(T)); if (Data) { memcpy(new_data, Data, (size_t)Size * sizeof(T)); IM_FREE(Data); } Data = new_data; Capacity = new_capacity; }
+      |                                                                                                                                                                                      ^
+      |                                                                                                                                                                                      (void*)
+include/imgui/imgui.h:2110:127: warning: first argument in call to 'memcpy' is a pointer to non-trivially copyable type 'ImGuiOldColumns' [-Wnontrivial-memcall]
+ 2110 |     inline void         push_back(const T& v)               { if (Size == Capacity) reserve(_grow_capacity(Size + 1)); memcpy(&Data[Size], &v, sizeof(v)); Size++; }
+      |                                                                                                                               ^
+src/imgui/imgui_tables.cpp:4214:28: note: in instantiation of member function 'ImVector<ImGuiOldColumns>::push_back' requested here
+ 4214 |     window->ColumnsStorage.push_back(ImGuiOldColumns());
+      |                            ^
+include/imgui/imgui.h:2110:127: note: explicitly cast the pointer to silence this warning
+ 2110 |     inline void         push_back(const T& v)               { if (Size == Capacity) reserve(_grow_capacity(Size + 1)); memcpy(&Data[Size], &v, sizeof(v)); Size++; }
+      |                                                                                                                               ^
+      |                                                                                                                               (void*)
+include/imgui/imgui.h:2106:182: warning: first argument in call to 'memcpy' is a pointer to non-trivially copyable type 'ImGuiOldColumns' [-Wnontrivial-memcall]
+ 2106 |     inline void         reserve(int new_capacity)           { if (new_capacity <= Capacity) return; T* new_data = (T*)IM_ALLOC((size_t)new_capacity * sizeof(T)); if (Data) { memcpy(new_data, Data, (size_t)Size * sizeof(T)); IM_FREE(Data); } Data = new_data; Capacity = new_capacity; }
+      |                                                                                                                                                                                      ^
+include/imgui/imgui.h:2110:85: note: in instantiation of member function 'ImVector<ImGuiOldColumns>::reserve' requested here
+ 2110 |     inline void         push_back(const T& v)               { if (Size == Capacity) reserve(_grow_capacity(Size + 1)); memcpy(&Data[Size], &v, sizeof(v)); Size++; }
+      |                                                                                     ^
+src/imgui/imgui_tables.cpp:4214:28: note: in instantiation of member function 'ImVector<ImGuiOldColumns>::push_back' requested here
+ 4214 |     window->ColumnsStorage.push_back(ImGuiOldColumns());
+      |                            ^
+include/imgui/imgui.h:2106:182: note: explicitly cast the pointer to silence this warning
+ 2106 |     inline void         reserve(int new_capacity)           { if (new_capacity <= Capacity) return; T* new_data = (T*)IM_ALLOC((size_t)new_capacity * sizeof(T)); if (Data) { memcpy(new_data, Data, (size_t)Size * sizeof(T)); IM_FREE(Data); } Data = new_data; Capacity = new_capacity; }
+      |                                                                                                                                                                                      ^
+      |                                                                                                                                                                                      (void*)
+19 warnings generated.
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/imgui_widgets.o src/imgui/imgui_widgets.cpp
+In file included from src/imgui/imgui_widgets.cpp:43:
+include/imgui/imgui.h:2984:43: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImDrawListSplitter' [-Wnontrivial-memcall]
+ 2984 |     inline ImDrawListSplitter()  { memset(this, 0, sizeof(*this)); }
+      |                                           ^
+include/imgui/imgui.h:2984:43: note: explicitly cast the pointer to silence this warning
+ 2984 |     inline ImDrawListSplitter()  { memset(this, 0, sizeof(*this)); }
+      |                                           ^
+      |                                           (void*)
+include/imgui/imgui.h:3055:60: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImDrawList' [-Wnontrivial-memcall]
+ 3055 |     ImDrawList(ImDrawListSharedData* shared_data) { memset(this, 0, sizeof(*this)); _Data = shared_data; }
+      |                                                            ^
+include/imgui/imgui.h:3055:60: note: explicitly cast the pointer to silence this warning
+ 3055 |     ImDrawList(ImDrawListSharedData* shared_data) { memset(this, 0, sizeof(*this)); _Data = shared_data; }
+      |                                                            ^
+      |                                                            (void*)
+In file included from src/imgui/imgui_widgets.cpp:45:
+include/imgui/imgui_internal.h:790:54: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImDrawDataBuilder' [-Wnontrivial-memcall]
+  790 |     ImDrawDataBuilder()                     { memset(this, 0, sizeof(*this)); }
+      |                                                      ^
+include/imgui/imgui_internal.h:790:54: note: explicitly cast the pointer to silence this warning
+  790 |     ImDrawDataBuilder()                     { memset(this, 0, sizeof(*this)); }
+      |                                                      ^
+      |                                                      (void*)
+include/imgui/imgui_internal.h:1092:50: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImGuiInputTextDeactivatedState' [-Wnontrivial-memcall]
+ 1092 |     ImGuiInputTextDeactivatedState()    { memset(this, 0, sizeof(*this)); }
+      |                                                  ^
+include/imgui/imgui_internal.h:1092:50: note: explicitly cast the pointer to silence this warning
+ 1092 |     ImGuiInputTextDeactivatedState()    { memset(this, 0, sizeof(*this)); }
+      |                                                  ^
+      |                                                  (void*)
+include/imgui/imgui_internal.h:1521:46: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImGuiListClipperData' [-Wnontrivial-memcall]
+ 1521 |     ImGuiListClipperData()          { memset(this, 0, sizeof(*this)); }
+      |                                              ^
+include/imgui/imgui_internal.h:1521:46: note: explicitly cast the pointer to silence this warning
+ 1521 |     ImGuiListClipperData()          { memset(this, 0, sizeof(*this)); }
+      |                                              ^
+      |                                              (void*)
+include/imgui/imgui_internal.h:1705:34: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImGuiOldColumns' [-Wnontrivial-memcall]
+ 1705 |     ImGuiOldColumns()   { memset(this, 0, sizeof(*this)); }
+      |                                  ^
+include/imgui/imgui_internal.h:1705:34: note: explicitly cast the pointer to silence this warning
+ 1705 |     ImGuiOldColumns()   { memset(this, 0, sizeof(*this)); }
+      |                                  ^
+      |                                  (void*)
+include/imgui/imgui_internal.h:1967:38: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImGuiIDStackTool' [-Wnontrivial-memcall]
+ 1967 |     ImGuiIDStackTool()      { memset(this, 0, sizeof(*this)); CopyToClipboardLastTime = -FLT_MAX; }
+      |                                      ^
+include/imgui/imgui_internal.h:1967:38: note: explicitly cast the pointer to silence this warning
+ 1967 |     ImGuiIDStackTool()      { memset(this, 0, sizeof(*this)); CopyToClipboardLastTime = -FLT_MAX; }
+      |                                      ^
+      |                                      (void*)
+include/imgui/imgui_internal.h:3027:42: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImGuiTable' [-Wnontrivial-memcall]
+ 3027 |     ImGuiTable()                { memset(this, 0, sizeof(*this)); LastFrameActive = -1; }
+      |                                          ^
+include/imgui/imgui_internal.h:3027:42: note: explicitly cast the pointer to silence this warning
+ 3027 |     ImGuiTable()                { memset(this, 0, sizeof(*this)); LastFrameActive = -1; }
+      |                                          ^
+      |                                          (void*)
+include/imgui/imgui_internal.h:3055:42: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImGuiTableTempData' [-Wnontrivial-memcall]
+ 3055 |     ImGuiTableTempData()        { memset(this, 0, sizeof(*this)); LastTimeActive = -1.0f; }
+      |                                          ^
+include/imgui/imgui_internal.h:3055:42: note: explicitly cast the pointer to silence this warning
+ 3055 |     ImGuiTableTempData()        { memset(this, 0, sizeof(*this)); LastTimeActive = -1.0f; }
+      |                                          ^
+      |                                          (void*)
+src/imgui/imgui_widgets.cpp:4103:12: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImGuiInputTextState' [-Wnontrivial-memcall]
+ 4103 |     memset(this, 0, sizeof(*this));
+      |            ^
+src/imgui/imgui_widgets.cpp:4103:12: note: explicitly cast the pointer to silence this warning
+ 4103 |     memset(this, 0, sizeof(*this));
+      |            ^
+      |            (void*)
+src/imgui/imgui_widgets.cpp:4900:58: warning: variable 'empty_string' is uninitialized when passed as a const pointer argument here [-Wuninitialized-const-pointer]
+ 4900 |                 stb_textedit_replace(state, state->Stb, &empty_string, 0);
+      |                                                          ^~~~~~~~~~~~
+src/imgui/imgui_widgets.cpp:9075:12: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImGuiTabBar' [-Wnontrivial-memcall]
+ 9075 |     memset(this, 0, sizeof(*this));
+      |            ^
+src/imgui/imgui_widgets.cpp:9075:12: note: explicitly cast the pointer to silence this warning
+ 9075 |     memset(this, 0, sizeof(*this));
+      |            ^
+      |            (void*)
+In file included from src/imgui/imgui_widgets.cpp:43:
+include/imgui/imgui.h:2104:189: warning: first argument in call to 'memcpy' is a pointer to non-trivially copyable type 'ImGuiMultiSelectTempData' [-Wnontrivial-memcall]
+ 2104 |     inline void         resize(int new_size, const T& v)    { if (new_size > Capacity) reserve(_grow_capacity(new_size)); if (new_size > Size) for (int n = Size; n < new_size; n++) memcpy(&Data[n], &v, sizeof(v)); Size = new_size; }
+      |                                                                                                                                                                                             ^
+src/imgui/imgui_widgets.cpp:7436:31: note: in instantiation of member function 'ImVector<ImGuiMultiSelectTempData>::resize' requested here
+ 7436 |         g.MultiSelectTempData.resize(g.MultiSelectTempDataStacked, ImGuiMultiSelectTempData());
+      |                               ^
+include/imgui/imgui.h:2104:189: note: explicitly cast the pointer to silence this warning
+ 2104 |     inline void         resize(int new_size, const T& v)    { if (new_size > Capacity) reserve(_grow_capacity(new_size)); if (new_size > Size) for (int n = Size; n < new_size; n++) memcpy(&Data[n], &v, sizeof(v)); Size = new_size; }
+      |                                                                                                                                                                                             ^
+      |                                                                                                                                                                                             (void*)
+include/imgui/imgui.h:2106:182: warning: first argument in call to 'memcpy' is a pointer to non-trivially copyable type 'ImGuiMultiSelectTempData' [-Wnontrivial-memcall]
+ 2106 |     inline void         reserve(int new_capacity)           { if (new_capacity <= Capacity) return; T* new_data = (T*)IM_ALLOC((size_t)new_capacity * sizeof(T)); if (Data) { memcpy(new_data, Data, (size_t)Size * sizeof(T)); IM_FREE(Data); } Data = new_data; Capacity = new_capacity; }
+      |                                                                                                                                                                                      ^
+include/imgui/imgui.h:2104:88: note: in instantiation of member function 'ImVector<ImGuiMultiSelectTempData>::reserve' requested here
+ 2104 |     inline void         resize(int new_size, const T& v)    { if (new_size > Capacity) reserve(_grow_capacity(new_size)); if (new_size > Size) for (int n = Size; n < new_size; n++) memcpy(&Data[n], &v, sizeof(v)); Size = new_size; }
+      |                                                                                        ^
+src/imgui/imgui_widgets.cpp:7436:31: note: in instantiation of member function 'ImVector<ImGuiMultiSelectTempData>::resize' requested here
+ 7436 |         g.MultiSelectTempData.resize(g.MultiSelectTempDataStacked, ImGuiMultiSelectTempData());
+      |                               ^
+include/imgui/imgui.h:2106:182: note: explicitly cast the pointer to silence this warning
+ 2106 |     inline void         reserve(int new_capacity)           { if (new_capacity <= Capacity) return; T* new_data = (T*)IM_ALLOC((size_t)new_capacity * sizeof(T)); if (Data) { memcpy(new_data, Data, (size_t)Size * sizeof(T)); IM_FREE(Data); } Data = new_data; Capacity = new_capacity; }
+      |                                                                                                                                                                                      ^
+      |                                                                                                                                                                                      (void*)
+include/imgui/imgui.h:2106:182: warning: first argument in call to 'memcpy' is a pointer to non-trivially copyable type 'ImGuiTabBar' [-Wnontrivial-memcall]
+ 2106 |     inline void         reserve(int new_capacity)           { if (new_capacity <= Capacity) return; T* new_data = (T*)IM_ALLOC((size_t)new_capacity * sizeof(T)); if (Data) { memcpy(new_data, Data, (size_t)Size * sizeof(T)); IM_FREE(Data); } Data = new_data; Capacity = new_capacity; }
+      |                                                                                                                                                                                      ^
+include/imgui/imgui.h:2103:88: note: in instantiation of member function 'ImVector<ImGuiTabBar>::reserve' requested here
+ 2103 |     inline void         resize(int new_size)                { if (new_size > Capacity) reserve(_grow_capacity(new_size)); Size = new_size; }
+      |                                                                                        ^
+include/imgui/imgui_internal.h:678:101: note: in instantiation of member function 'ImVector<ImGuiTabBar>::resize' requested here
+  678 |     T*          Add()                               { int idx = FreeIdx; if (idx == Buf.Size) { Buf.resize(Buf.Size + 1); FreeIdx++; } else { FreeIdx = *(int*)&Buf[idx]; } IM_PLACEMENT_NEW(&Buf[idx]) T(); AliveCount++; return &Buf[idx]; }
+      |                                                                                                     ^
+include/imgui/imgui_internal.h:675:156: note: in instantiation of member function 'ImPool<ImGuiTabBar>::Add' requested here
+  675 |     T*          GetOrAddByKey(ImGuiID key)          { int* p_idx = Map.GetIntRef(key, -1); if (*p_idx != -1) return &Buf[*p_idx]; *p_idx = FreeIdx; return Add(); }
+      |                                                                                                                                                            ^
+src/imgui/imgui_widgets.cpp:9125:38: note: in instantiation of member function 'ImPool<ImGuiTabBar>::GetOrAddByKey' requested here
+ 9125 |     ImGuiTabBar* tab_bar = g.TabBars.GetOrAddByKey(id);
+      |                                      ^
+include/imgui/imgui.h:2106:182: note: explicitly cast the pointer to silence this warning
+ 2106 |     inline void         reserve(int new_capacity)           { if (new_capacity <= Capacity) return; T* new_data = (T*)IM_ALLOC((size_t)new_capacity * sizeof(T)); if (Data) { memcpy(new_data, Data, (size_t)Size * sizeof(T)); IM_FREE(Data); } Data = new_data; Capacity = new_capacity; }
+      |                                                                                                                                                                                      ^
+      |                                                                                                                                                                                      (void*)
+15 warnings generated.
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/imgui_impl_glfw.o src/imgui/backends/imgui_impl_glfw.cpp
+In file included from src/imgui/backends/imgui_impl_glfw.cpp:85:
+include/imgui/imgui.h:2984:43: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImDrawListSplitter' [-Wnontrivial-memcall]
+ 2984 |     inline ImDrawListSplitter()  { memset(this, 0, sizeof(*this)); }
+      |                                           ^
+include/imgui/imgui.h:2984:43: note: explicitly cast the pointer to silence this warning
+ 2984 |     inline ImDrawListSplitter()  { memset(this, 0, sizeof(*this)); }
+      |                                           ^
+      |                                           (void*)
+include/imgui/imgui.h:3055:60: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImDrawList' [-Wnontrivial-memcall]
+ 3055 |     ImDrawList(ImDrawListSharedData* shared_data) { memset(this, 0, sizeof(*this)); _Data = shared_data; }
+      |                                                            ^
+include/imgui/imgui.h:3055:60: note: explicitly cast the pointer to silence this warning
+ 3055 |     ImDrawList(ImDrawListSharedData* shared_data) { memset(this, 0, sizeof(*this)); _Data = shared_data; }
+      |                                                            ^
+      |                                                            (void*)
+2 warnings generated.
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/imgui_impl_opengl3.o src/imgui/backends/imgui_impl_opengl3.cpp
+In file included from src/imgui/backends/imgui_impl_opengl3.cpp:116:
+include/imgui/imgui.h:2984:43: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImDrawListSplitter' [-Wnontrivial-memcall]
+ 2984 |     inline ImDrawListSplitter()  { memset(this, 0, sizeof(*this)); }
+      |                                           ^
+include/imgui/imgui.h:2984:43: note: explicitly cast the pointer to silence this warning
+ 2984 |     inline ImDrawListSplitter()  { memset(this, 0, sizeof(*this)); }
+      |                                           ^
+      |                                           (void*)
+include/imgui/imgui.h:3055:60: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImDrawList' [-Wnontrivial-memcall]
+ 3055 |     ImDrawList(ImDrawListSharedData* shared_data) { memset(this, 0, sizeof(*this)); _Data = shared_data; }
+      |                                                            ^
+include/imgui/imgui.h:3055:60: note: explicitly cast the pointer to silence this warning
+ 3055 |     ImDrawList(ImDrawListSharedData* shared_data) { memset(this, 0, sizeof(*this)); _Data = shared_data; }
+      |                                                            ^
+      |                                                            (void*)
+2 warnings generated.
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/tinyfiledialogs.o src/tinydialog/tinyfiledialogs.c
+clang++: warning: treating 'c' input as 'c++' when in C++ mode, this behavior is deprecated [-Wdeprecated]
+src/tinydialog/tinyfiledialogs.c:306:4: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+  306 |                         sprintf(aoResultHexRGB, "#%02hhx%02hhx%02hhx",
+      |                         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+src/tinydialog/tinyfiledialogs.c:3388:3: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+ 3388 |                 sprintf ( lPythonCommand , "%s %s" , gPython2Name , lPythonParams ) ;
+      |                 ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+src/tinydialog/tinyfiledialogs.c:3395:5: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+ 3395 |                                 sprintf ( lPythonCommand , "%s %s" , gPython2Name , lPythonParams ) ;
+      |                                 ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+src/tinydialog/tinyfiledialogs.c:3402:6: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+ 3402 |                                         sprintf ( gPython2Name , "python2.%d" , i ) ;
+      |                                         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+src/tinydialog/tinyfiledialogs.c:3405:7: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+ 3405 |                                                 sprintf ( lPythonCommand , "%s %s" , gPython2Name , lPythonParams ) ;
+      |                                                 ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+src/tinydialog/tinyfiledialogs.c:5649:3: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+ 5649 |                 sprintf(lTmp, "%d", 256 * lDefaultRGB[0] ) ;
+      |                 ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+src/tinydialog/tinyfiledialogs.c:5652:3: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+ 5652 |                 sprintf(lTmp, "%d", 256 * lDefaultRGB[1] ) ;
+      |                 ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+src/tinydialog/tinyfiledialogs.c:5655:3: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+ 5655 |                 sprintf(lTmp, "%d", 256 * lDefaultRGB[2] ) ;
+      |                 ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+src/tinydialog/tinyfiledialogs.c:5676:4: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+ 5676 |                         sprintf ( lDialogString ,
+      |                         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+src/tinydialog/tinyfiledialogs.c:5682:4: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+ 5682 |                         sprintf ( lDialogString ,
+      |                         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+src/tinydialog/tinyfiledialogs.c:5688:4: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+ 5688 |                         sprintf ( lDialogString ,
+      |                         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+src/tinydialog/tinyfiledialogs.c:5702:3: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+ 5702 |                 sprintf ( lDialogString ,
+      |                 ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+src/tinydialog/tinyfiledialogs.c:5721:3: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+ 5721 |                 sprintf(lTmp,"%hhu %hhu %hhu",lDefaultRGB[0],
+      |                 ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+13 warnings generated.
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/Shape.o src/Shape.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/Teapot.o src/Teapot.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/Mobius.o src/Mobius.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/Torus.o src/Torus.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/ImportShape.o src/ImportShape.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/ImportCurve.o src/ImportCurve.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/ImportCharacter.o src/ImportCharacter.cpp
+src/ImportCharacter.cpp:102:17: warning: unused variable 'jointCenters' [-Wunused-variable]
+  102 |     const auto& jointCenters = m_skeletalModel.getJointCenters();
+      |                 ^~~~~~~~~~~~
+src/ImportCharacter.cpp:442:15: warning: unused variable 'faceNormals' [-Wunused-variable]
+  442 |     glm::vec3 faceNormals[] = {
+      |               ^~~~~~~~~~~
+2 warnings generated.
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/Curve.o src/Curve.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/Joint.o src/Joint.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/MatrixStack.o src/MatrixStack.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/SkeletalModel.o src/SkeletalModel.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/ColorPresets.o src/ColorPresets.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/FileImporter.o src/FileImporter.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/Renderer.o src/Renderer.cpp
+In file included from src/Renderer.cpp:1:
+In file included from include/Application.h:5:
+In file included from include/Renderer.h:7:
+include/imgui/imgui.h:2984:43: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImDrawListSplitter' [-Wnontrivial-memcall]
+ 2984 |     inline ImDrawListSplitter()  { memset(this, 0, sizeof(*this)); }
+      |                                           ^
+include/imgui/imgui.h:2984:43: note: explicitly cast the pointer to silence this warning
+ 2984 |     inline ImDrawListSplitter()  { memset(this, 0, sizeof(*this)); }
+      |                                           ^
+      |                                           (void*)
+include/imgui/imgui.h:3055:60: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImDrawList' [-Wnontrivial-memcall]
+ 3055 |     ImDrawList(ImDrawListSharedData* shared_data) { memset(this, 0, sizeof(*this)); _Data = shared_data; }
+      |                                                            ^
+include/imgui/imgui.h:3055:60: note: explicitly cast the pointer to silence this warning
+ 3055 |     ImDrawList(ImDrawListSharedData* shared_data) { memset(this, 0, sizeof(*this)); _Data = shared_data; }
+      |                                                            ^
+      |                                                            (void*)
+In file included from src/Renderer.cpp:1:
+In file included from include/Application.h:5:
+In file included from include/Renderer.h:25:
+include/SimpleSystem.h:34:10: warning: 'updateParticles' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+   34 |     void updateParticles();
+      |          ^
+include/ParticleSystem.h:24:18: note: overridden virtual function is here
+   24 |     virtual void updateParticles() {};
+      |                  ^
+In file included from src/Renderer.cpp:1:
+In file included from include/Application.h:5:
+In file included from include/Renderer.h:26:
+In file included from include/SimplePendulum.h:4:
+include/PendulumSystem.h:30:10: warning: 'updateParticles' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+   30 |     void updateParticles();
+      |          ^
+include/ParticleSystem.h:24:18: note: overridden virtual function is here
+   24 |     virtual void updateParticles() {};
+      |                  ^
+src/Renderer.cpp:140:14: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+  140 |         std::sprintf(name, "lights[%d].type", count);
+      |              ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+src/Renderer.cpp:142:14: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+  142 |         std::sprintf(name, "lights[%d].position", count);
+      |              ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+src/Renderer.cpp:144:14: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+  144 |         std::sprintf(name, "lights[%d].direction", count);
+      |              ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+src/Renderer.cpp:151:14: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+  151 |         std::sprintf(name, "lights[%d].ambient", count);
+      |              ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+src/Renderer.cpp:153:14: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+  153 |         std::sprintf(name, "lights[%d].diffuse", count);
+      |              ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+src/Renderer.cpp:155:14: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+  155 |         std::sprintf(name, "lights[%d].specular", count);
+      |              ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+src/Renderer.cpp:158:14: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+  158 |         std::sprintf(name, "lights[%d].constant", count);
+      |              ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+src/Renderer.cpp:160:14: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+  160 |         std::sprintf(name, "lights[%d].linear", count);
+      |              ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+src/Renderer.cpp:162:14: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+  162 |         std::sprintf(name, "lights[%d].quadratic", count);
+      |              ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+src/Renderer.cpp:758:5: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+  758 |                                 sprintf(label, "%s", jointName[i].c_str()); // Construct the label using the joint name
+      |                                 ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:278:1: note: 'sprintf' has been explicitly marked deprecated here
+  278 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+src/Renderer.cpp:740:28: warning: unused variable 'currentVertices' [-Wunused-variable]
+  740 |                         std::vector<glm::vec3>& currentVertices = importCharacter->getVertices();  // Direct access to vertices from Shape
+      |                                                 ^~~~~~~~~~~~~~~
+src/Renderer.cpp:741:34: warning: unused variable 'bindVertices' [-Wunused-variable]
+  741 |                         const std::vector<glm::vec3>& bindVertices = importCharacter->getBindVertices();
+      |                                                       ^~~~~~~~~~~~
+src/Renderer.cpp:742:43: warning: unused variable 'attachments' [-Wunused-variable]
+  742 |                         const std::vector<std::vector<float>>& attachments = importCharacter->getAttachments();
+      |                                                                ^~~~~~~~~~~
+In file included from src/Renderer.cpp:1:
+In file included from include/Application.h:5:
+include/Renderer.h:160:11: warning: private field 'translateX' is not used [-Wunused-private-field]
+  160 |     float translateX, translateY, translateZ;
+      |           ^
+include/Renderer.h:160:23: warning: private field 'translateY' is not used [-Wunused-private-field]
+  160 |     float translateX, translateY, translateZ;
+      |                       ^
+include/Renderer.h:160:35: warning: private field 'translateZ' is not used [-Wunused-private-field]
+  160 |     float translateX, translateY, translateZ;
+      |                                   ^
+include/Renderer.h:161:11: warning: private field 'angleX' is not used [-Wunused-private-field]
+  161 |     float angleX, angleY;
+      |           ^
+include/Renderer.h:161:19: warning: private field 'angleY' is not used [-Wunused-private-field]
+  161 |     float angleX, angleY;
+      |                   ^
+include/Renderer.h:162:11: warning: private field 'scaleFactor' is not used [-Wunused-private-field]
+  162 |     float scaleFactor;
+      |           ^
+23 warnings generated.
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/ShapeManager.o src/ShapeManager.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/TimeStepper.o src/TimeStepper.cpp
+In file included from src/TimeStepper.cpp:3:
+include/SimpleSystem.h:34:10: warning: 'updateParticles' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+   34 |     void updateParticles();
+      |          ^
+include/ParticleSystem.h:24:18: note: overridden virtual function is here
+   24 |     virtual void updateParticles() {};
+      |                  ^
+1 warning generated.
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/ParticleSystem.o src/ParticleSystem.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/SimpleSystem.o src/SimpleSystem.cpp
+In file included from src/SimpleSystem.cpp:2:
+include/SimpleSystem.h:34:10: warning: 'updateParticles' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+   34 |     void updateParticles();
+      |          ^
+include/ParticleSystem.h:24:18: note: overridden virtual function is here
+   24 |     virtual void updateParticles() {};
+      |                  ^
+src/SimpleSystem.cpp:148:19: warning: unused variable 'dummy' [-Wunused-variable]
+  148 |         glm::vec3 dummy = state[2 * i + 1];   // unused, just for consistency
+      |                   ^~~~~
+src/SimpleSystem.cpp:177:11: warning: unused variable 'modelLoc' [-Wunused-variable]
+  177 |     GLint modelLoc = glGetUniformLocation(shaderProgram, "model");
+      |           ^~~~~~~~
+3 warnings generated.
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/PendulumSystem.o src/PendulumSystem.cpp
+In file included from src/PendulumSystem.cpp:1:
+include/PendulumSystem.h:30:10: warning: 'updateParticles' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+   30 |     void updateParticles();
+      |          ^
+include/ParticleSystem.h:24:18: note: overridden virtual function is here
+   24 |     virtual void updateParticles() {};
+      |                  ^
+1 warning generated.
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/SimplePendulum.o src/SimplePendulum.cpp
+In file included from src/SimplePendulum.cpp:1:
+In file included from include/SimplePendulum.h:4:
+include/PendulumSystem.h:30:10: warning: 'updateParticles' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+   30 |     void updateParticles();
+      |          ^
+include/ParticleSystem.h:24:18: note: overridden virtual function is here
+   24 |     virtual void updateParticles() {};
+      |                  ^
+In file included from src/SimplePendulum.cpp:1:
+include/SimplePendulum.h:21:11: warning: private field 'm_length' is not used [-Wunused-private-field]
+   21 |     float m_length;
+      |           ^
+include/SimplePendulum.h:22:11: warning: private field 'm_mass' is not used [-Wunused-private-field]
+   22 |     float m_mass;
+      |           ^
+3 warnings generated.
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/SimpleChain.o src/SimpleChain.cpp
+In file included from src/SimpleChain.cpp:1:
+In file included from include/SimpleChain.h:4:
+include/PendulumSystem.h:30:10: warning: 'updateParticles' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+   30 |     void updateParticles();
+      |          ^
+include/ParticleSystem.h:24:18: note: overridden virtual function is here
+   24 |     virtual void updateParticles() {};
+      |                  ^
+1 warning generated.
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/SimpleCloth.o src/SimpleCloth.cpp
+In file included from src/SimpleCloth.cpp:1:
+In file included from include/SimpleCloth.h:4:
+include/PendulumSystem.h:30:10: warning: 'updateParticles' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+   30 |     void updateParticles();
+      |          ^
+include/ParticleSystem.h:24:18: note: overridden virtual function is here
+   24 |     virtual void updateParticles() {};
+      |                  ^
+1 warning generated.
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/Application.o src/Application.cpp
+In file included from src/Application.cpp:2:
+In file included from include/Application.h:5:
+In file included from include/Renderer.h:7:
+include/imgui/imgui.h:2984:43: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImDrawListSplitter' [-Wnontrivial-memcall]
+ 2984 |     inline ImDrawListSplitter()  { memset(this, 0, sizeof(*this)); }
+      |                                           ^
+include/imgui/imgui.h:2984:43: note: explicitly cast the pointer to silence this warning
+ 2984 |     inline ImDrawListSplitter()  { memset(this, 0, sizeof(*this)); }
+      |                                           ^
+      |                                           (void*)
+include/imgui/imgui.h:3055:60: warning: first argument in call to 'memset' is a pointer to non-trivially copyable type 'ImDrawList' [-Wnontrivial-memcall]
+ 3055 |     ImDrawList(ImDrawListSharedData* shared_data) { memset(this, 0, sizeof(*this)); _Data = shared_data; }
+      |                                                            ^
+include/imgui/imgui.h:3055:60: note: explicitly cast the pointer to silence this warning
+ 3055 |     ImDrawList(ImDrawListSharedData* shared_data) { memset(this, 0, sizeof(*this)); _Data = shared_data; }
+      |                                                            ^
+      |                                                            (void*)
+In file included from src/Application.cpp:2:
+In file included from include/Application.h:5:
+In file included from include/Renderer.h:25:
+include/SimpleSystem.h:34:10: warning: 'updateParticles' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+   34 |     void updateParticles();
+      |          ^
+include/ParticleSystem.h:24:18: note: overridden virtual function is here
+   24 |     virtual void updateParticles() {};
+      |                  ^
+In file included from src/Application.cpp:2:
+In file included from include/Application.h:5:
+In file included from include/Renderer.h:26:
+In file included from include/SimplePendulum.h:4:
+include/PendulumSystem.h:30:10: warning: 'updateParticles' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+   30 |     void updateParticles();
+      |          ^
+include/ParticleSystem.h:24:18: note: overridden virtual function is here
+   24 |     virtual void updateParticles() {};
+      |                  ^
+4 warnings generated.
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/Globals.o src/Globals.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/ErrorHandling.o src/ErrorHandling.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/ShaderLoader.o src/ShaderLoader.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/Camera.o src/Camera.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/SceneLight.o src/SceneLight.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/BVH.o src/BVH.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/RayScene.o src/RayScene.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/RayTracer.o src/RayTracer.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/ImageIO.o src/ImageIO.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/Settings.o src/Settings.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/Light.o src/Light.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/SceneIO.o src/SceneIO.cpp
+In file included from src/SceneIO.cpp:20:
+include/SimpleSystem.h:34:10: warning: 'updateParticles' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+   34 |     void updateParticles();
+      |          ^
+include/ParticleSystem.h:24:18: note: overridden virtual function is here
+   24 |     virtual void updateParticles() {};
+      |                  ^
+In file included from src/SceneIO.cpp:21:
+In file included from include/SimplePendulum.h:4:
+include/PendulumSystem.h:30:10: warning: 'updateParticles' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+   30 |     void updateParticles();
+      |          ^
+include/ParticleSystem.h:24:18: note: overridden virtual function is here
+   24 |     virtual void updateParticles() {};
+      |                  ^
+2 warnings generated.
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/AnimationController.o src/AnimationController.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/HeadPose.o src/HeadPose.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/VRSystem.o src/VRSystem.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/AnimationTimeline.o src/AnimationTimeline.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/TextureCache.o src/TextureCache.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/TexCoordsGiven.o src/TexCoordsGiven.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/ShapeTransform.o src/ShapeTransform.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/Cube.o src/Cube.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/Pyramid.o src/Pyramid.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/Sphere.o src/Sphere.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/Icosahedron.o src/Icosahedron.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/Custom.o src/Custom.cpp
+src/Custom.cpp:9:7: warning: unused function 'signedPow' [-Wunused-function]
+    9 | float signedPow(float base, float exponent) {
+      |       ^~~~~~~~~
+1 warning generated.
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/ShapeNormals.o src/ShapeNormals.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/ObjParser.o src/ObjParser.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/CameraControl.o src/CameraControl.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/CurveEval.o src/CurveEval.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/Surface.o src/Surface.cpp
+src/Surface.cpp:5:6: warning: unused function 'checkFlat' [-Wunused-function]
+    5 | bool checkFlat(const Curve &profile) {
+      |      ^~~~~~~~~
+1 warning generated.
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/Skinning.o src/Skinning.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/Keyframe.o src/Keyframe.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/TexCoords.o src/TexCoords.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/Lighting.o src/Lighting.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/Shading.o src/Shading.cpp
+src/Shading.cpp:33:7: warning: unused function 'schlick' [-Wunused-function]
+   33 | float schlick(float cosTheta, float n1, float n2) {
+      |       ^~~~~~~
+1 warning generated.
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/RayIntersect.o src/RayIntersect.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/VRCamera.o src/VRCamera.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/Integrators.o src/Integrators.cpp
+c++ -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include -c -o obj/PendulumSystemForces.o src/PendulumSystemForces.cpp
+In file included from src/PendulumSystemForces.cpp:17:
+include/PendulumSystem.h:30:10: warning: 'updateParticles' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+   30 |     void updateParticles();
+      |          ^
+include/ParticleSystem.h:24:18: note: overridden virtual function is here
+   24 |     virtual void updateParticles() {};
+      |                  ^
+1 warning generated.
+c++ -o editor obj/main.o obj/glad.o obj/imgui.o obj/imgui_demo.o obj/imgui_draw.o obj/imgui_tables.o obj/imgui_widgets.o obj/imgui_impl_glfw.o obj/imgui_impl_opengl3.o obj/tinyfiledialogs.o obj/Shape.o obj/Teapot.o obj/Mobius.o obj/Torus.o obj/ImportShape.o obj/ImportCurve.o obj/ImportCharacter.o obj/Curve.o obj/Joint.o obj/MatrixStack.o obj/SkeletalModel.o obj/ColorPresets.o obj/FileImporter.o obj/Renderer.o obj/ShapeManager.o obj/TimeStepper.o obj/ParticleSystem.o obj/SimpleSystem.o obj/PendulumSystem.o obj/SimplePendulum.o obj/SimpleChain.o obj/SimpleCloth.o obj/Application.o obj/Globals.o obj/ErrorHandling.o obj/ShaderLoader.o obj/Camera.o obj/SceneLight.o obj/BVH.o obj/RayScene.o obj/RayTracer.o obj/ImageIO.o obj/Settings.o obj/Light.o obj/SceneIO.o obj/AnimationController.o obj/HeadPose.o obj/VRSystem.o obj/AnimationTimeline.o obj/TextureCache.o obj/TexCoordsGiven.o obj/ShapeTransform.o obj/Cube.o obj/Pyramid.o obj/Sphere.o obj/Icosahedron.o obj/Custom.o obj/ShapeNormals.o obj/ObjParser.o obj/CameraControl.o obj/CurveEval.o obj/Surface.o obj/Skinning.o obj/Keyframe.o obj/TexCoords.o obj/Lighting.o obj/Shading.o obj/RayIntersect.o obj/VRCamera.o obj/Integrators.o obj/PendulumSystemForces.o -std=c++11 -Isrc/imgui -Isrc/imgui/backends -Iinclude/imgui -Iinclude/tinydialog -Iinclude -Iinclude/glad -Isrc/stb -g -Wall -Wformat -DGLM_ENABLE_EXPERIMENTAL -MMD -MP -I/opt/homebrew/include -I/usr/local/include -I/opt/local/include  -lglfw -framework OpenGL -framework Cocoa -framework IOKit -framework CoreVideo -L/opt/homebrew/lib -L/usr/local/lib -L/opt/local/lib
+Build complete for Mac OS X

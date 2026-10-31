@@ -25,6 +25,8 @@
 #include <algorithm>
 #include <cmath>
 
+constexpr float kTimeEpsilon = 1e-4f;
+
 // Given: the labels, so the UI and the scene file agree on spelling.
 const char* const kEasingNames[EASE_COUNT] = {
     "Step", "Linear", "Ease In", "Ease Out", "Ease In-Out"
@@ -92,11 +94,30 @@ void AnimationTrack::addKey(const Keyframe& k) {
     // on insertion order, and make its u = (t - a.time) / (b.time - a.time)
     // divide by zero. You are about to write that code, or you already have.
     //
+
+    // Initial behaviour that is to be FIXED
     // As it stands this appends without sorting or replacing. The timeline
     // looks entirely alive -- keys land, tracks appear, diamonds drag -- and
     // it misbehaves the moment you key out of order or key the same instant
     // twice. Both are visible, and both are yours to fix.
-    keys.push_back(k);
+
+    std::vector<Keyframe>::iterator existing = std::find_if(
+        keys.begin(), keys.end(),
+        [&k](const Keyframe& key) {
+            return std::fabs(key.time - k.time) <= kTimeEpsilon;
+        });
+
+    if (existing != keys.end()) {
+        *existing = k;  // replace the matching key
+    } else {
+        keys.push_back(k);
+    }
+
+    // Replacement can change the key's time, so sort either way.
+    std::sort(keys.begin(), keys.end(),
+              [](const Keyframe& a, const Keyframe& b) {
+                  return a.time < b.time;
+              });
 }
 
 bool AnimationTrack::removeKeyNear(float t, float eps) {
@@ -106,14 +127,24 @@ bool AnimationTrack::removeKeyNear(float t, float eps) {
     // key, and Delete key passes a generous eps of 0.05 s precisely so it
     // can find the one you meant.
     //
+
+    // Initial behaviour that is to be FIXED
     // As it stands this takes the first key within eps instead, which is the
     // wrong one whenever two keys sit close together.
-    for (size_t i = 0; i < keys.size(); ++i) {
-        if (std::fabs(keys[i].time - t) <= eps) {
-            keys.erase(keys.begin() + static_cast<long>(i));
-            return true;
+    if (keys.empty()) return false;
+
+    std::vector<Keyframe>::const_iterator nearest = std::min_element(
+        keys.begin(), 
+        keys.end(),
+        [t] (const Keyframe& a, const Keyframe& b) {
+            return std::fabs(a.time - t) < std::fabs(b.time - t);
         }
+    );
+    if (std::fabs(nearest->time -t) <= eps) {
+        keys.erase(nearest);
+        return true;
     }
+
     return false;
 }
 
