@@ -78,7 +78,15 @@ float applyEasing(int easing, float u) {
     // works, the scene file remembers your choice, and nothing looks any
     // different. That is the checkpoint -- the motion is correct, just
     // mechanical.
-    (void)easing;
+
+    switch (easing) {
+        case EASE_STEP: return 0.0f;
+        case EASE_LINEAR: return u;
+        case EASE_IN: return u * u;
+        case EASE_OUT: return 1.0f - (1.0f - u) * (1.0f - u);
+        case EASE_IN_OUT: return 3.0f * u * u - 2.0f * u * u * u;
+    }   
+
     return u;
 }
 
