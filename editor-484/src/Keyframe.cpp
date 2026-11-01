@@ -176,8 +176,32 @@ int AnimationTrack::moveKey(size_t index, float t, float eps) {
 
     if (index >= keys.size()) return -1;
     if (t < 0.0f) t = 0.0f;
-    keys[index].time = t;
-    return static_cast<int>(index);
+
+    // Remove the key from the vector and store it in a temporary variable
+    Keyframe moved = keys[index];
+    moved.time = t;
+    // Erase the key at the original index
+    keys.erase(keys.begin() + index);
+
+    keys.push_back(moved);
+    std::sort(
+        keys.begin(), 
+        keys.end(),
+        [](const Keyframe& a, const Keyframe& b) {
+            return a.time < b.time;
+        }
+    );
+    
+    auto it = std::lower_bound(
+        keys.begin(),
+        keys.end(),
+        moved.time,
+        [](const Keyframe& inspectedKey, const float& timeToFind){
+            return std::fabs(inspectedKey.time - timeToFind) <= kTimeEpsilon;
+        }
+    );
+
+    return static_cast<int>(std::distance(keys.begin(), it));
 }
 
 bool AnimationTrack::evaluate(float t, Keyframe& out) const {
