@@ -40,7 +40,7 @@ glm::vec3 lerpVec3(const glm::vec3& a, const glm::vec3& b, float u) {
     if (u<= 0.0f) return a;
     if (u >= 1.0f) return b;
 
-    return a + (b - a) * 0.0f;
+    return a + (b - a) * u;
 }
 
 // Interpolate Euler angles the short way round.
@@ -58,7 +58,17 @@ glm::vec3 lerpEulerDegrees(const glm::vec3& a, const glm::vec3& b, float u) {
     if (u<= 0.0f) return a;
     if (u >= 1.0f) return b;
 
-    return a + (b - a) * 0.0f;
+    glm::vec3 out;
+    for (int i = 0; i < 3; ++i) {
+        float delta = b[i] - a[i];
+        delta = std::fmod(delta + 180.0f, 360.0f);
+
+        if (delta < 0.0f) delta += 360.0f;
+        delta -= 180.0f;
+        out[i] = a[i] + delta * u;
+    }   
+    
+    return out;
 }
 
 // Remap u through an easing curve. See Keyframe.h for the contract; the one
