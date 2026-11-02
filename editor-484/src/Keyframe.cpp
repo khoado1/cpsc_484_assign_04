@@ -37,7 +37,9 @@ const char* const kEasingNames[EASE_COUNT] = {
 // out-of-range t cannot extrapolate a pose that was never keyed.
 glm::vec3 lerpVec3(const glm::vec3& a, const glm::vec3& b, float u) {
     // TODO(animation): linear interpolation, with u clamped to [0, 1]
-    (void)u;
+    if (u<= 0.0f) return a;
+    if (u >= 1.0f) return b;
+
     return a + (b - a) * 0.0f;
 }
 
@@ -52,8 +54,11 @@ glm::vec3 lerpEulerDegrees(const glm::vec3& a, const glm::vec3& b, float u) {
     // Per axis: wrap the difference b - a into (-180, 180] before applying
     // it, or a track crossing 350 -> 10 degrees spins backwards through
     // the whole circle instead of forwards through 20.
-    (void)b; (void)u;
-    return a;
+
+    if (u<= 0.0f) return a;
+    if (u >= 1.0f) return b;
+
+    return a + (b - a) * 0.0f;
 }
 
 // Remap u through an easing curve. See Keyframe.h for the contract; the one
