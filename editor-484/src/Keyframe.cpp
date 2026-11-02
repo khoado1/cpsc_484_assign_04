@@ -67,7 +67,7 @@ glm::vec3 lerpEulerDegrees(const glm::vec3& a, const glm::vec3& b, float u) {
         delta -= 180.0f;
         out[i] = a[i] + delta * u;
     }   
-    
+
     return out;
 }
 
@@ -235,6 +235,56 @@ bool AnimationTrack::evaluate(float t, Keyframe& out) const {
     // compute u across the interval, remap it through
     // applyEasing(k[i].easing, u), and interpolate. See the full contract
     // in include/Keyframe.h.
-    (void)t;
+    
+    if (keys.empty()) {
+        return false;
+    }
+    else if (keys.size() == 1) {
+        out = keys[0];
+        out.time = t; // Set the time to the requested time
+        return true;
+    }
+    float startTime = keys.front().time;
+    float endTime = keys.back().time;
+    float span = endTime - startTime;
+
+    float evaluatedTime = t;
+    if (loop && span > 0.0f &&
+        (evaluatedTime < startTime || evaluatedTime > endTime)) {
+        float rel = std::fmod(evaluatedTime - startTime, span);
+        if (rel < 0.0f) {
+            rel += span;
+        }
+        evaluatedTime = startTime + rel;
+    }
+
+    if (evaluatedTime <= startTime) {
+        out = keys.front();
+        out.time = evaluatedTime;
+        return true;
+    }
+    else if (evaluatedTime >= endTime) {
+        out = keys.back();
+        out.time = evaluatedTime;
+        return true;
+    }
+    
+    //capture both keyframes
+    //get difference of time of the two keyframes
+    //get u = (t - k[i].time) / (k[i+1].time - k[i].time)
+    //apply easing to u
+    //interpolate position, rotation, scale using lerpVec3 and lerpEulerDegrees
+    for (size_t i = 0; i < keys.size() - 1; ++i) {
+        if (evaluatedTime >= keys[i].time && evaluatedTime <= keys[i + 1].time) {
+            float u = (evaluatedTime - keys[i].time) / (keys[i + 1].time - keys[i].time);
+            u = applyEasing(keys[i].easing, u);
+            out.position = lerpVec3(keys[i].position, keys[i + 1].position, u);
+            out.rotation = lerpEulerDegrees(keys[i].rotation, keys[i + 1].rotation, u);
+            out.scale = lerpVec3(keys[i].scale, keys[i + 1].scale, u);
+            out.time = evaluatedTime;
+            out.easing = keys[i].easing; // Set the easing to the easing of the first keyframe
+            return true;
+        }
+    }   
     return false;
 }
